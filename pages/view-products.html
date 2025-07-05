@@ -1,0 +1,46 @@
+<!-- pages/view-products.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🛍️ View Products</title>
+  <link rel="stylesheet" href="../css/view-products.css" />
+</head>
+<body>
+
+  <h2>🛍️ View Products</h2>
+
+  <div class="filters">
+    <label>Filter by Category:</label>
+    <select id="categoryFilter">
+      <option value="">All</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Grocery">Grocery</option>
+    </select>
+
+    <label>Filter by Floor:</label>
+    <select id="floorFilter">
+      <option value="">All</option>
+      <option value="0">Floor 0</option>
+      <option value="1">Floor 1</option>
+      <option value="2">Floor 2</option>
+      <option value="3">Floor 3</option>
+      <option value="4">Floor 4</option>
+      <option value="5">Floor 5</option>
+      <option value="6">Floor 6</option>
+      <option value="7">Floor 7</option>
+      <option value="8">Floor 8</option>
+      <option value="9">Floor 9</option>
+      <option value="10">Floor 10</option>
+    </select>
+  </div>
+
+  <div id="productList">Loading products...</div>
+
+  <!-- JS: Handles filters and Add to Cart -->
+  <script type="module" src="../js/view-products.js"></script>
+
+</body>
+</html>

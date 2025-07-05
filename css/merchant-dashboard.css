@@ -1,0 +1,106 @@
+/* 📋 General Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+/* 📦 Dashboard Sections */
+.dashboard-section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 24px;
+  color: #e67e22;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e67e22;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* 🧱 Card Layout */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  color: #d35400;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* ✏️ Edit/Delete Buttons */
+.card .actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.card .actions button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.card .actions .edit-btn {
+  background-color: #3498db;
+}
+
+.card .actions .edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.card .actions .delete-btn {
+  background-color: #e74c3c;
+}
+
+.card .actions .delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* 🔍 Empty Message */
+.empty-message {
+  font-style: italic;
+  color: #999;
+  margin-top: 20px;
+}

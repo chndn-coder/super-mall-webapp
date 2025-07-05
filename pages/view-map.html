@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🗺️ Super Mall Map</title>
+  <link rel="stylesheet" href="../css/view-map.css" />
+
+  <!-- ✅ Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- ✅ Routing Machine CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+</head>
+<body>
+  <h2>🗺️ Super Mall Shop Locations</h2>
+
+  <!-- 🔎 Filters -->
+  <div class="filters">
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="Grocery">Grocery</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Food">Food</option>
+    </select>
+    <select id="floorFilter">
+      <option value="">All Floors</option>
+      <!-- ✅ Floor 0–10 -->
+      <!-- 👇 It's better to generate via JS in your JS file instead of <script> inside HTML -->
+    </select>
+    <button id="locateBtn">📍 Nearest Shop</button>
+  </div>
+
+  <!-- 🗺️ Map Container -->
+  <div id="map"></div>
+
+  <!-- ✅ Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- ✅ Routing Machine JS -->
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+
+  <!-- ✅ Firebase & Custom Map Logic -->
+  <script type="module" src="../js/view-map.js"></script>
+</body>
+</html>

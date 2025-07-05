@@ -1,0 +1,33 @@
+<!-- pages/add-offer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Offer</title>
+  <link rel="stylesheet" href="../css/add-offer.css" />
+</head>
+<body>
+  <h2>🎁 Add Offer</h2>
+
+  <form id="offerForm">
+    <label>Shop ID:</label><br />
+    <input type="text" id="shopId" required /><br /><br />
+
+    <label>Offer Title:</label><br />
+    <input type="text" id="offerTitle" required /><br /><br />
+
+    <label>Offer Description:</label><br />
+    <textarea id="offerDescription" required></textarea><br /><br />
+
+    <label>Valid Until (optional):</label><br />
+    <input type="date" id="validUntil" /><br /><br />
+
+    <button type="submit">Add Offer</button>
+  </form>
+
+  <p id="message"></p>
+  <script type="module" src="../js/auth-check.js"></script>
+  <script type="module" src="../js/add-offer.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✨ Welcome to Super Mall ✨</title>
+  <link rel="stylesheet" href="entry.css" />
+</head>
+<body>
+  <div class="entry-wrapper">
+    <img src="assets/entry-door.png" alt="Magical Mall Door" class="entry-bg" />
+    <div class="entry-overlay">
+      <h1>✨ Welcome to Super Mall ✨</h1>
+      <div class="entry-buttons">
+        <button class="btn user-btn" onclick="window.location.href='pages/login.html?role=user'">Enter as User</button>
+        <button class="btn merchant-btn" onclick="window.location.href='pages/login.html?role=merchant'">Enter as Merchant</button>
+      </div>
+    </div>
+    <audio id="doorSound" src="assets/door-open.mp3" preload="auto"></audio>
+  </div>
+
+  <script>
+    function enterMall(role) {
+      const audio = document.getElementById("doorSound");
+      audio.play();
+      setTimeout(() => {
+        window.location.href = `index.html`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

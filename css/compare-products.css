@@ -1,0 +1,85 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f9fc;
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.compare-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+select, button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 15px;
+}
+
+#comparisonResult {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.compare-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.compare-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.compare-card h3 {
+  color: #d35400;
+}
+
+.compare-card p {
+  margin: 8px 0;
+}
+
+.compare-card.highlight {
+  border: 2px solid #2ecc71;
+  background-color: #eafaf1;
+}
+
+.feature-compare {
+  width: 220px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-compare h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.feature-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.has {
+  color: green;
+}
+.missing {
+  color: lightgray;
+}

@@ -1,0 +1,47 @@
+/* css/merchant-orders.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 40px;
+}
+
+.orders-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+#merchantEmailDisplay {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+  font-weight: 500;
+}
+
+.order-card {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.order-card h3 {
+  margin-top: 0;
+  color: #e67e22;
+}
+
+.order-card p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.item-summary p {
+  margin: 4px 0;
+}

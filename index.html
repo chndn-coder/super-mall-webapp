@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Super Mall</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- 🎥 Background Video -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="assets/mall-animation.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+  <!-- 🧭 Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">🛒 Super Mall</div>
+    <ul class="nav-links">
+      <!-- Merchant-only Links -->
+      <li class="merchant-only"><a href="pages/register-shop.html">Register Shop</a></li>
+      <li class="merchant-only"><a href="pages/add-product.html">Add Product</a></li>
+      <li class="merchant-only"><a href="pages/add-offer.html">Add Offer</a></li>
+      <li class="merchant-only"><a href="pages/merchant-orders.html">📦 Merchant Orders</a></li>
+
+      <!-- User-only Links -->
+      <li class="user-only"><a href="pages/view-shops.html">View Shops</a></li>
+      <li class="user-only"><a href="pages/view-products.html">View Products</a></li>
+      <li class="user-only"><a href="pages/compare-products.html">Compare Products</a></li>
+      <li class="user-only"><a href="pages/view-offers.html">View Offers</a></li>
+      <li class="user-only"><a href="pages/view-reviews.html">Reviews & Ratings</a></li>
+      <li class="user-only"><a href="pages/cart.html" class="cart-preview">🛒 Cart (<span id="cartCount">0</span>)</a></li>
+      <li class="user-only"><a href="pages/view-orders.html">📦 My Orders</a></li>
+      <li class="user-only"><a href="pages/view-map.html">Mall Map 🗺️</a></li>
+
+      <!-- Shared -->
+      <li><span id="userEmail" class="user-info"></span></li>
+      <li><button id="logoutBtn" class="logout-btn">Logout</button></li>
+    </ul>
+  </nav>
+
+  <!-- 🏬 Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2>🛍️ Discover Everything at One Place</h2>
+      <p>Super Mall brings you the ultimate shopping experience – from fashion to electronics to groceries, all under one roof!</p>
+      <a href="pages/view-shops.html" class="cta-button">🗺️ Explore Mall Shops</a>
+    </div>
+  </section>
+
+  <!-- 🎁 Latest Offers -->
+  <section id="offer-section">
+    <h2>🎁 Latest Offers</h2>
+    <div id="offerList"></div>
+  </section>
+
+  <!-- ⭐ Latest Reviews Section -->
+  <section id="review-section">
+    <h2>⭐ Customer Reviews</h2>
+    <div id="reviewList"></div>
+  </section>
+
+  <!-- 📝 Submit Review -->
+  <section id="review-section">
+    <h2>📝 Submit a Review</h2>
+    <form id="reviewForm">
+      <label>Choose Product:</label>
+      <select id="productSelect" required></select><br><br>
+
+      <label>Rating (1–5):</label><br>
+      <input type="number" id="rating" min="1" max="5" required /><br><br>
+
+      <label>Comment:</label><br>
+      <textarea id="comment" required></textarea><br><br>
+
+      <button type="submit">✅ Submit Review</button>
+    </form>
+    <p id="reviewMessage"></p>
+  </section>
+
+  <!-- ⬆️ Scroll-to-Top Button -->
+  <button id="scrollTopBtn" title="Go to top">⬆️</button>
+
+  <!-- 🔥 Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDAmDD9JL4p6apWhKUkN-zNTBFtQZzHpUc",
+      authDomain: "supermallapp-439f7.firebaseapp.com",
+      projectId: "supermallapp-439f7",
+      storageBucket: "supermallapp-439f7.appspot.com",
+      messagingSenderId: "913726155207",
+      appId: "1:913726155207:web:d73892c97507f046a011e2"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
+  </script>
+
+  <!-- 📦 Scripts -->
+  <script type="module" src="js/index-offers.js"></script>
+  <script type="module" src="js/index-reviews.js"></script>
+  <script type="module" src="js/review-submit.js"></script>
+  <script type="module" src="js/logout.js"></script>
+
+  <!-- ⬆️ Scroll Behavior -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.style.backgroundColor = window.scrollY > 10 ? '#2c3e50' : '#37475a';
+      nav.style.boxShadow = window.scrollY > 10 ? '0 2px 6px rgba(0, 0, 0, 0.2)' : 'none';
+
+      const btn = document.getElementById('scrollTopBtn');
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    document.getElementById('scrollTopBtn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- 🛒 Cart Count Preview Script -->
+  <script>
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("superMallCart") || "[]");
+      let totalCount = 0;
+      cart.forEach(item => {
+        totalCount += item.quantity || 1;
+      });
+      document.getElementById("cartCount").innerText = totalCount;
+    }
+
+    updateCartCount();
+    window.addEventListener("storage", updateCartCount);
+  </script>
+
+  <!-- 👥 Role-Based Navigation Control -->
+  <script>
+    const role = localStorage.getItem("role"); // 'merchant' or 'user'
+    document.querySelectorAll(".merchant-only").forEach(el => {
+      el.style.display = role === "merchant" ? "inline-block" : "none";
+    });
+    document.querySelectorAll(".user-only").forEach(el => {
+      el.style.display = role === "user" ? "inline-block" : "none";
+    });
+  </script>
+
+</body>
+</html>

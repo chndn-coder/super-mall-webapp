@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Success</title>
+  <link rel="stylesheet" href="../css/checkout-success.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div class="success-container">
+    <h1>🎉</h1>
+    <h2>Thank You for Your Order!</h2>
+    <p><strong>Tracking ID:</strong> <span id="orderId">Loading...</span></p>
+    <p><strong>Payment:</strong> <span id="paymentStatus">Loading...</span></p>
+    <p id="locationDisplay"></p>
+
+    <div id="map" style="height: 300px; margin-top: 20px; border-radius: 8px; display: none;"></div>
+
+    <a href="../index.html" class="back-button">⬅️ Return to Super Mall</a><br><br>
+    <button id="downloadBtn" class="back-button">⬇️ Download Invoice</button>
+    <button id="printBtn" class="back-button">🖨️ Print Receipt</button>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="../js/checkout-success.js"></script>
+</body>
+</html>

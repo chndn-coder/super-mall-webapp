@@ -1,0 +1,27 @@
+<!-- pages/cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="../css/cart.css" />
+</head>
+<body>
+  <h2>🛒 Your Shopping Cart</h2>
+
+  <div id="cartItemsContainer">
+    <!-- Cart items will be inserted by cart.js -->
+  </div>
+
+  <div class="cart-summary">
+    <p><strong>Total:</strong> ₹<span id="cartTotal">0</span></p>
+    
+    <!-- ✅ Use <a> to avoid double `/pages/pages/checkout.html` bug -->
+    <a href="checkout.html" class="checkout-btn">✅ Proceed to Checkout</a>
+    <button id="clearCartBtn">🗑️ Clear Cart</button>
+  </div>
+
+  <script type="module" src="../js/cart.js"></script>
+</body>
+</html>

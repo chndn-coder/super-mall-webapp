@@ -1,0 +1,37 @@
+/* css/view-offers.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #34495e;
+  margin-bottom: 30px;
+}
+
+#offersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.offer-card {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 280px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.offer-card h3 {
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}

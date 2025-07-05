@@ -1,0 +1,35 @@
+<!-- pages/merchant-dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merchant Dashboard</title>
+  <link rel="stylesheet" href="../css/merchant-dashboard.css" />
+</head>
+<body>
+
+  <h1>📊 Merchant Dashboard</h1>
+  <p id="welcomeMsg"></p>
+
+  <section>
+    <h2>🏪 Your Shops</h2>
+    <div id="shopList">Loading...</div>
+  </section>
+
+  <section>
+    <h2>📦 Your Products</h2>
+    <div id="productList">Loading...</div>
+  </section>
+
+  <section>
+    <h2>🎁 Your Offers</h2>
+    <div id="offerList">Loading...</div>
+  </section>
+
+  <!-- Firebase Auth Check -->
+  <script type="module" src="../js/auth-check.js"></script>
+  <!-- Dashboard Logic -->
+  <script type="module" src="../js/merchant-dashboard.js"></script>
+</body>
+</html>
