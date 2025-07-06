@@ -93,10 +93,23 @@ Deployed on Firebase Hosting + GitHub Pages for showing it off online 😎
 
 ## 🖼️ Screenshots
 
-- 🏠 Homepage with mall animation  
-- 🔍 Product comparison view  
-- 🛒 Add to cart and checkout  
-- 🗺️ Track order location on map  
+### 🚪entry to mall
+![Entry](assets/entry.png)
+
+### 🏠 Homepage with mall animation  
+![Homepage](assets/homepage.png)
+
+### 🔍 Product comparison view  
+![Compare Products](assets/compare-products.png)
+
+### 🛒 Add to cart   
+![Cart ](assets/cart.png)
+
+### ✅ checkout
+![checkout](assets/checkout.png)
+
+### 🗺️ Track order location on map  
+![Map](assets/checkout-success.png)
 
 ---
 
