@@ -46,7 +46,11 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     localStorage.setItem("role", role || "user");
 
     setTimeout(() => {
-      window.location.href = "../index.html";
+      if (role === "merchant") {
+        window.location.href = "merchant-dashboard.html";
+      } else {
+        window.location.href = "../home.html";
+      }
     }, 1000);
   } catch (err) {
     document.getElementById("message").textContent = `❌ ${err.message}`;

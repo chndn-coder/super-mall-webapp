@@ -5,31 +5,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Merchant Dashboard</title>
+
+  <!-- Common Shared Styles -->
+  <link rel="stylesheet" href="../css/home.css" />
   <link rel="stylesheet" href="../css/merchant-dashboard.css" />
 </head>
 <body>
 
-  <h1>📊 Merchant Dashboard</h1>
-  <p id="welcomeMsg"></p>
+  <!-- 🎥 Background Video -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="../assets/mall-animation.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
 
-  <section>
-    <h2>🏪 Your Shops</h2>
-    <div id="shopList">Loading...</div>
-  </section>
+  <!-- 🧭 Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">🛒 Super Mall</div>
+    <ul class="nav-links">
+      <li><a href="merchant-dashboard.html">Dashboard</a></li>
+      <li><a href="register-shop.html">Register Shop</a></li>
+      <li><a href="add-product.html">Add Product</a></li>
+      <li><a href="add-offer.html">Add Offer</a></li>
+      <li><a href="merchant-orders.html">Orders</a></li>
+      <li><button id="logoutBtn" class="logout-btn">Logout</button></li>
+    </ul>
+  </nav>
 
-  <section>
-    <h2>📦 Your Products</h2>
-    <div id="productList">Loading...</div>
-  </section>
+<!-- 📊 Main Dashboard Content -->
+<div class="overlay-wrapper">
+  <div class="main-content dashboard-container">
+    <h1>📊 Merchant Dashboard</h1>
+    <p id="welcomeMsg" class="dashboard-text"></p>
 
-  <section>
-    <h2>🎁 Your Offers</h2>
-    <div id="offerList">Loading...</div>
-  </section>
+    <section class="dashboard-section">
+      <h2 class="section-title">🏪 Your Shops</h2>
+      <div id="shopList" class="card-list dashboard-text">Loading...</div>
+    </section>
 
-  <!-- Firebase Auth Check -->
+    <section class="dashboard-section">
+      <h2 class="section-title">📦 Your Products</h2>
+      <div id="productList" class="card-list dashboard-text">Loading...</div>
+    </section>
+
+    <section class="dashboard-section">
+      <h2 class="section-title">🎁 Your Offers</h2>
+      <div id="offerList" class="card-list dashboard-text">Loading...</div>
+    </section>
+  </div>
+</div>
+
+
+  <!-- ⬆️ Scroll-to-Top Button -->
+  <button id="scrollTopBtn" title="Go to top">⬆️</button>
+
+  <!-- 🔐 Auth Check -->
   <script type="module" src="../js/auth-check.js"></script>
-  <!-- Dashboard Logic -->
+
+  <!-- 🧠 Dashboard Logic -->
   <script type="module" src="../js/merchant-dashboard.js"></script>
+
+  <!-- 🚀 Scroll & Logout -->
+  <script>
+    // Navbar Scroll Styling
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.style.backgroundColor = window.scrollY > 10 ? '#2c3e50' : '#37475a';
+      nav.style.boxShadow = window.scrollY > 10 ? '0 2px 6px rgba(0, 0, 0, 0.2)' : 'none';
+      document.getElementById('scrollTopBtn').style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    // Scroll-to-Top
+    document.getElementById('scrollTopBtn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 🔓 Logout Functionality
+    import('https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js').then(({ getAuth, signOut }) => {
+      const auth = getAuth();
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        signOut(auth).then(() => {
+          localStorage.clear();
+          window.location.href = "../index.html"; // back to entry page
+        });
+      });
+    });
+  </script>
 </body>
 </html>
