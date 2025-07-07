@@ -7,6 +7,12 @@ Shop owners (merchants) can register their shop, add products, and manage offers
 
 ---
 
+## 🌐 Live Demo
+
+👉 **Visit Live Site**: [Super Mall is Live on Firebase! 🚀](https://supermallapp-439f7.web.app)
+
+---
+
 ## 🌟 What Can You Do on Super Mall?
 
 ### 👤 As a User:
@@ -132,3 +138,11 @@ Beginner web developer learning by building awesome real apps ❤️
 ## 💬 Bonus Tip (for reviewers)
 
 > This project is responsive, runs fully in the browser, and uses Firebase to connect frontend and backend — great for beginner developers to learn from.
+
+---
+
+## 🔗 Project Links
+
+- 🔥 Firebase Hosting: [https://supermallapp-439f7.web.app](https://supermallapp-439f7.web.app)
+- 🗂️ GitHub Repo: [https://github.com/chndn-coder/super-mall-webapp]
+
